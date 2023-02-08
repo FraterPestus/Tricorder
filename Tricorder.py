@@ -18,7 +18,8 @@
 # 11.   3.5" LED screen
 # 12.   Be surprised!!!                         (maybe a game, tic-tac-toe or something like that)
 
-#       Silent mode: LED notification, no sounds (optional, see point 10)
+#       Silent mode: LED notification, no sounds (optional, see point 10), sliding button inside the casing
+#       On / Off switch with sliding button inside the casing
 
 #   Diagnosis tools:
 #       Uptime (show time the device is switched ON)
@@ -26,34 +27,40 @@
 #       show free space on data storage (if additionla storage will be implemented)
 
 
-# Import libraries
+# Import libraries:
 from machine import Pin
 from time import time
 from time import sleep
 #from bme280 import bme280
 
-# Describe Pins for LED's
+# Describe Pins for LEDs_
 PWR = Pin(__.pin.OUT)               # Indicates On/Off, red LED
 Torch = Pin(__.pin.OUT)             # 
 runLight = Pin(__.pin.OUT)          # Running lights in front of the device, 8 LEDs in pairs of 2
-LedBtnEnvironment = Pin(__.pin.OUT) # LED on button for weather data, yellow LED
-LedBtnGPS = Pin(__.pin.OUT)         # LED on button for GPS data, yellow LED
-LedBtnPointer = Pin(__.pin.OUT)     # LED on button for Laserpointer, yellow LED
-LedDistanceScan = Pin(__.pin.OUT)   # LED on Button for distance scan, yellow LED
-LedBtnTorch = Pin(__.pin.OUT)       # LED on button for torch, yellow LED
- = Pin(__.pin.OUT)
+LedBtnEnvironment = Pin(__.pin.OUT) # LED on button for weather data    - Alpha: Green
+LedBtnGPS = Pin(__.pin.OUT)         # LED on button for GPS data        - Beta: Green
+LedBtnPointer = Pin(__.pin.OUT)     # LED on button for Laserpointer    - Gamma: Green
+LedDistanceScan = Pin(__.pin.OUT)   # LED on Button for distance scan   - Delta: Green
+LedBtnTorch = Pin(__.pin.OUT)       # LED on button for torch           - GEO: Yellow
+ = Pin(__.pin.OUT)                  #                                   - MET: Yellow
+LedBtnOxymeter = Pin(__.pin.OUT)    # LED on button for Pulse-Oxymeter  - BIO: Yellow
+LedSwitchUp = Pin(__.pin.OUT)       #                                   - Library UP
+LedSwitchDown = Pin(__.pin.OUT)     #                                   - Library DOWN
+FrontRed1 = Pin(__.pin.OUT)         #                                   - Front left LED, Red
+FrontRed2 = Pin(__.pin.OUT)         #                                   - Front right LED, Red
 
-# Describe Pins for Buttons
-btnTime = (__, Pin.IN, Pin.PULL_DOWN)
-btnWeather = (__, Pin.IN, Pin.PULL_DOWN)
-btnGPS = (__, Pin.IN, Pin.PULL_DOWN)
-btnDistanceScan = (__, Pin.IN, Pin.PULL_DOWN)
-btnPointer = (__, Pin.IN, Pin.PULL_DOWN)
-btnTorch = (__, Pin.IN, Pin.PULL_DOWN)
-reedScreen = (__, Pin.IN, Pin.PULL_DOWN)
+# Describe Pins for Buttons:
+btnTime = (__, Pin.IN, Pin.PULL_DOWN)               # Quick change to Time and Date screen
+btnWeather = (__, Pin.IN, Pin.PULL_DOWN)            # Quick change to weather screen
+btnGPS = (__, Pin.IN, Pin.PULL_DOWN)                # Quick change to GPS screen
+btnDistanceScan = (__, Pin.IN, Pin.PULL_DOWN)       # Quick change to Distance scan
+btnPointer = (__, Pin.IN, Pin.PULL_DOWN)            # toggle laserpointer (PewPewPew)
+btnTorch = (__, Pin.IN, Pin.PULL_DOWN)              # switch through Torch modes (100%, 60%, 30%, SOS)
+reedScreen = (__, Pin.IN, Pin.PULL_DOWN)            # activate screen when device is opened
+LibraryUp = (__, Pin.IN, Pin.PULL_DOWN)             # Switch up through modes
+LibraryDown = (__, Pin.IN, Pin.PULL_DOWN)           # Switch down through modes
 
-
-# Describe Pins for sensors
+# Describe Pins for sensor modules:
 BME = Pin(__, Pin.IN)    # Sensor for humidity, temperature and air pressure
 GPS = Pin(__, Pin.IN)    # Sensor for GPS location
 Tem = Pin(__, Pin.IN)    # IR-sensor for surface tmeperature
