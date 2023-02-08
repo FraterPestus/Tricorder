@@ -44,9 +44,9 @@ LedBtnTorch = Pin(__.pin.OUT)       # LED on button for torch, yellow LED
  = Pin(__.pin.OUT)
 
 # Describe Pins for Buttons
+btnTime = (__, Pin.IN, Pin.PULL_DOWN)
 btnWeather = (__, Pin.IN, Pin.PULL_DOWN)
 btnGPS = (__, Pin.IN, Pin.PULL_DOWN)
-btnEnvironmentScan = (__, Pin.IN, Pin.PULL_DOWN)
 btnDistanceScan = (__, Pin.IN, Pin.PULL_DOWN)
 btnPointer = (__, Pin.IN, Pin.PULL_DOWN)
 btnTorch = (__, Pin.IN, Pin.PULL_DOWN)
@@ -54,11 +54,12 @@ reedScreen = (__, Pin.IN, Pin.PULL_DOWN)
 
 
 # Describe Pins for sensors
-BME = Pin(__, Pin.IN)
-GPS = Pin(__, Pin.IN)
-Tem = Pin(__, Pin.IN)
-Dis = Pin(__, Pin.IN)
-Vita = Pin(__, Pin.IN)
+BME = Pin(__, Pin.IN)    # Sensor for humidity, temperature and air pressure
+GPS = Pin(__, Pin.IN)    # Sensor for GPS location
+Tem = Pin(__, Pin.IN)    # IR-sensor for surface tmeperature
+Dis = Pin(__, Pin.IN)    # ToF-sensor for distance scan up to 4 meters
+Vita = Pin(__, Pin.IN)   # sensor for heartrate and blood oxygen leves
+
 
 
 # Create lists for histories
