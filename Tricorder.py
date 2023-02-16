@@ -7,24 +7,24 @@
 # 1.2   Alarm
 # 2.    Weather station with temperature, humidity and pressure, history of the last 48 hours
 # 2.1   Shown values switchable
-# 3.    GPS based coordinates with compass      (we'll see what we get)
-# 4.    Infrared surface temperature scan       (he'll do his best)
-# 5.    Distance measurement                    (not to be 100% reliable)
-# 6.    Heartbeat sensor & Blood Oxymeter       (not suitable for medical diagnoses!)
-# 7.    Laser pointer (also as aiming aid for distance measurement)     (PewPewPew)
-# 8.    Flashlight with Hi-Power-LED (100%, 60%, 30%, SOS at 100%)      (Haaalp!!)
+# 3.    GPS based coordinates with compass                                          (we'll see what we get)
+# 4.    Infrared surface temperature scan                                           (he'll do his best)
+# 5.    Distance measurement                                                        (not to be 100% reliable)
+# 6.    Heartbeat sensor & Blood Oxymeter                                           (not suitable for medical diagnoses!)
+# 7.    Laser pointer (also aiming aid for distanceand temperature measurement)     (PewPewPew)
+# 8.    Flashlight with Hi-Power-LED (100%, 60%, 30%, SOS at 100%)                  (Haaalp!!)
 # 9.    Blinking stuff for demonstration 
 # 10.   acoustic feedback                       (optional, will be done if physical space is available) 
 # 11.   3.5" LED screen
 # 12.   Be surprised!!!                         (maybe a game, tic-tac-toe or something like that)
 
-#       Silent mode: LED notification, no sounds (optional, see point 10), sliding button inside the casing
+#       Silent mode: LED notifications only, no sounds (optional, see point 10), sliding button inside the casing
 #       On / Off switch with sliding button inside the casing
 
 #   Diagnosis tools:
 #       Uptime (show time the device is switched ON)
 #       show CPU core temperature
-#       show free space on data storage (if additionla storage will be implemented)
+#       show used space and free space on data storage (if additionla storage will be implemented)
 
 
 # Import libraries:
@@ -36,7 +36,7 @@ from time import sleep
 # Describe Pins for LEDs_
 PWR = Pin(__.pin.OUT)               # Indicates On/Off, red LED
 Torch = Pin(__.pin.OUT)             # 
-runLight = Pin(__.pin.OUT)          # Running lights in front of the device, 8 LEDs in pairs of 2
+runLight = Pin(__.pin.OUT)          # Running green lights in front of the device, 8 LEDs in pairs of 2
 LedBtnEnvironment = Pin(__.pin.OUT) # LED on button for weather data    - Alpha: Green
 LedBtnGPS = Pin(__.pin.OUT)         # LED on button for GPS data        - Beta: Green
 LedBtnPointer = Pin(__.pin.OUT)     # LED on button for Laserpointer    - Gamma: Green
