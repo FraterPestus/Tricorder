@@ -5,6 +5,7 @@
 # 1.    calendar with date, time and current (negative) stardate (Stardate 0 = 01.01.2323)
 # 1.1   World time
 # 1.2   Alarm
+# 1.3   Countdown
 # 2.    Weather station with temperature, humidity and pressure, history of the last 48 hours
 # 2.1   Shown values switchable
 # 3.    GPS based coordinates with compass                                          (we'll see what we get)
@@ -24,13 +25,14 @@
 #   Diagnosis tools:
 #       Uptime (show time the device is switched ON)
 #       show CPU core temperature
-#       show used space and free space on data storage (if additionla storage will be implemented)
+#       show used space and free space on data storage (if additional storage will be implemented)
 
 
 # Import libraries:
 from machine import Pin
 from time import time
 from time import sleep
+#import screen
 #from bme280 import bme280
 
 # Describe Pins for LEDs_
