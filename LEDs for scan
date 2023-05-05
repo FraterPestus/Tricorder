@@ -1,0 +1,135 @@
+# Bibliotheken laden
+from machine import Pin
+from utime import sleep
+
+OnBoard = Pin(25, Pin.OUT)
+
+#Belegung LED's Grün 1-8
+gr1 = Pin(2, Pin.OUT)
+gr2 = Pin(3, Pin.OUT)
+gr3 = Pin(4, Pin.OUT)
+gr4 = Pin(5, Pin.OUT)
+gr5 = Pin(6, Pin.OUT)
+gr6 = Pin(7, Pin.OUT)
+gr7 = Pin(8, Pin.OUT)
+gr8 = Pin(9, Pin.OUT)
+
+#Belegung LED's Gelb 1-4
+ge1 = Pin(10, Pin.OUT)
+ge2 = Pin(11, Pin.OUT)
+ge3 = Pin(12, Pin.OUT)
+ge4 = Pin(13, Pin.OUT)
+
+
+
+#Intervalle Festlegen
+SlowLight    = 0.3
+MedLight     = 0.2
+FastLight    = 0.1
+
+#Funktionen festlegen
+def Scan_gruen():
+    gr4.on()
+    gr5.on()
+    sleep(MedLight)
+    gr4.off()
+    gr5.off()
+    gr3.on()
+    gr6.on()
+    sleep(MedLight)
+    gr3.off()
+    gr6.off()
+    gr2.on()
+    gr7.on()
+    sleep(MedLight)
+    gr2.off()
+    gr7.off()
+    gr1.on()
+    gr8.on()
+    sleep(MedLight)
+    gr1.off()
+    gr8.off()
+    sleep(MedLight)
+
+def Lauflicht_gruen():
+    gr1.on()
+    sleep(MedLight)
+    gr1.off()
+    gr2.on()
+    sleep(MedLight)
+    gr2.off()
+    gr3.on()
+    sleep(MedLight)
+    gr3.off()
+    gr4.on()
+    sleep(MedLight)
+    gr4.off()
+    gr5.on()
+    sleep(MedLight)
+    gr5.off()
+    gr6.on()
+    sleep(MedLight)
+    gr6.off()
+    gr7.on()
+    sleep(MedLight)
+    gr7.off()
+    
+    gr8.on()
+    sleep(MedLight)
+    gr8.off()
+
+    gr7.on()
+    sleep(MedLight)
+    gr7.off()
+    gr6.on()
+    sleep(MedLight)
+    gr6.off()
+    gr5.on()
+    sleep(MedLight)
+    gr5.off()
+    gr4.on()
+    sleep(MedLight)
+    gr4.off()
+    gr3.on()
+    sleep(MedLight)
+    gr3.off()
+    gr2.on()
+    sleep(MedLight)
+    gr2.off()
+
+def Scan_gelb():
+    ge1.on()
+    sleep(s2)
+    ge1.off()
+    ge2.on()
+    sleep(s2)
+    ge2.off()
+    ge3.on()
+    sleep(s2)
+    ge3.off()
+    ge4.on()
+    sleep(s2)
+    ge4.off()
+    sleep(s2)
+    
+    ge3.on()
+    sleep(s2)
+    ge3.off()
+    ge2.on()
+    sleep(s2)
+    ge2.off()
+    ge1.on()
+    sleep(s2)
+    ge1.off()
+    sleep(s2)
+
+def Check():
+    OnBoard.on()
+    sleep(0.2)
+    OnBoard.off()
+    sleep(0.5)
+
+# Wiederholung (Endlos-Schleife)
+while True:
+    Check()
+    Scan_gruen()
